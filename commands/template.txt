@@ -1,0 +1,39 @@
+-- JAVASCRIPTコード --
+
+const { SlashCommandBuilder } = require('discord.js')
+
+module.exports = {
+  data: new SlashCommandBuilder()
+    // 必須項目
+    .setName('コマンドの名前')
+    .setDescription('コマンドの説明')
+
+    // 任意のオプション
+    .add___Option(option => option
+      .setName('オプションの名前')
+      .setDescription('オプションの説明')
+    )
+  ,
+  async execute(interaction, client, discord) {
+    // コマンドの処理 (リプライ以外にも様々なことが出来ます)
+    interaction.reply('返信する内容を記入')
+  }
+}
+
+
+-- オプション --
+
+オプションを追加する場合
+.add___Option(option => option
+の、___の部分を下記に書き換える
+
+文字列: String
+真偽値: Boolean
+整数: Integer
+小数: Number
+ユーザー: User
+チャンネル: Role
+メンション可能: Mentionable
+ファイル: Attachment
+
+https://discordjs.guide/slash-commands/response-methods.html#ephemeral-responses

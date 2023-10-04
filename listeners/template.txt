@@ -1,0 +1,14 @@
+-- 基本的な構造 --
+
+module.exports = (client) => {
+  // リスナーの内容を記述
+};
+
+
+--  例 --
+
+module.exports = (client, discord) => {
+  client.once('ready', async() => {
+    console.log('Logged into the bot')
+  });
+};
